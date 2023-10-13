@@ -118,7 +118,7 @@
   font-weight: 'extrabold';
   font-style: 'extrabold';
 }
-
+/* 
 body{
   font-family: 'Mona Sans', Arial, Helvetica, sans-serif;
 }
@@ -140,7 +140,7 @@ body{
 .font-extrabold{
   font-family: 'Mona extrabold', Arial, Helvetica, sans-serif;
   font-weight: extrabold;
-}
+} */
 
 .cards{
   height: 22vw;

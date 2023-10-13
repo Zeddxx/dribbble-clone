@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Mail } from "lucide-react";
 import demoAvatar from '../../public/dribbble-banner.webp'
 import { Skeleton } from "./ui/skeleton";
+import Link from "next/link";
 
 export default function OpenedPost({ isLoading , posts }){
     
@@ -17,9 +18,11 @@ export default function OpenedPost({ isLoading , posts }){
                             <Skeleton className='h-12 w-12 rounded-full' />
                         ) : (
                             <Avatar className='h-12 w-12'>
+                            <Link href={'/' + posts.authorName}>
                             <AvatarImage 
                             src={posts.authorImage}
                             />
+                            </Link>
                             <AvatarFallback>{posts.authorName?.slice(0, 2)}</AvatarFallback>
                         </Avatar>
                         )}
@@ -74,9 +77,11 @@ export default function OpenedPost({ isLoading , posts }){
                     <Skeleton className='h-24 w-24 rounded-full shrink-0' />
                 ) : (
                     <Avatar className='h-24 w-24'>
+                    <Link href={'/' + posts.authorName}>
                     <AvatarImage 
                     src={posts.authorImage}
                     />
+                    </Link>
                     <AvatarFallback>
                         {posts.authorName?.slice(0,2)}
                     </AvatarFallback>
