@@ -23,7 +23,7 @@ export default function FilterMenu() {
     <>
       {pathname === '/' ? null : <DropdownMenu>
         <DropdownMenuTrigger 
-        className={buttonVariants({ variant: 'outline', className :'flex gap-x-3 items-center'})}>
+        className={buttonVariants({ variant: 'outline', className :'flex gap-x-3 items-center shadow-md'})}>
           {/* <Button 
           variant='outline' 
           className='flex gap-x-2 items-center rounded-xl capitalize'>{lastPathname} <ChevronDown size={17} /></Button> */}

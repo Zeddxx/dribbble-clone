@@ -1,6 +1,7 @@
 'use client'
 
 import OpenedPost from "@/components/OpenedPost";
+import OpenedPostForMain from "@/components/OpenedPostForMain";
 import { useEffect, useState } from "react";
 
 export default function Page({ params }){
@@ -27,7 +28,7 @@ export default function Page({ params }){
     }, [params])
     return(
         <div className="max-w-6xl mx-auto h-auto mt-8">
-           <OpenedPost isLoading={isLoading} posts={ posts }/> 
+           <OpenedPostForMain isLoading={isLoading} posts={ posts }/> 
         </div>
     )
 }

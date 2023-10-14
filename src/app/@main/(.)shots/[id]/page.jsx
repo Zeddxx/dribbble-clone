@@ -1,6 +1,6 @@
 import Back from "@/components/Back";
-import OpenedPost from "@/components/OpenedPost";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import OpenedPost from "@/components/OpenedPost";
 import prisma from '@/lib/prismadb'
 
 export default async function Page({ params }){
@@ -19,7 +19,7 @@ export default async function Page({ params }){
             <div className="h-auto absolute xmd:top-8 block top-0 rounded-t-xl rounder-r-xl w-full max-h-full bg-white z-30 xmd:py-16 py-8 overflow-y-auto">
                 <Back />
                 <div className="max-w-3xl px-6 mb-1.5 mx-auto flex w-full">
-                <p className="text-xl w-fit block xmd:hidden font-medium">{openedPost.title}</p>
+                <p className="text-4xl w-fit block xmd:hidden font-bold">{openedPost.title}</p>
                 </div>
                     <OpenedPost posts={openedPost}/>
                 <div className="h-full w-fit xmd:flex hidden flex-col gap-y-4  absolute right-8 top-20">

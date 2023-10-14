@@ -1,29 +1,13 @@
-'use client'
-
-import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { AiTwotoneEye, AiTwotoneHeart, AiOutlineHeart } from 'react-icons/ai'
+import { AiOutlineHeart, AiTwotoneEye, AiTwotoneHeart } from "react-icons/ai";
+import Image from "next/image";
 import { Bookmark } from "lucide-react";
 
-export default function FollowingCards({ post }){
-    const pathname = usePathname()
-    // console.log(pathname);
-
-    useEffect(() => {
-      if(pathname === `/shots/${post.id}`){
-        document.body.style.overflow = 'hidden'
-      }
-      return () => {
-        document.body.style.overflow = 'auto'
-      }
-    })
-
-    return (
+export default function UserPost({ post }){
+    return(
         <>
-          <div className="cards overflow-hidden flex flex-col relative xl:max-w-[316px] xl:max-h-[237px] xl:min-w-[30vh] xl:min-h-[18vw] sm:min-w-[280px] sm:min-h-[210px] min-h-[204px] rounded-lg">
+        <div className="cards overflow-hidden flex flex-col relative xl:max-w-[316px] xl:max-h-[237px] xl:min-w-[30vh] xl:min-h-[18vw] sm:min-w-[280px] sm:min-h-[210px] min-h-[204px] rounded-lg">
             <Link href={`/shots/${post.id}`} className="relative group rounded-lg w-full h-full overflow-hidden">
             <Image 
             src={post.image}
@@ -39,7 +23,6 @@ export default function FollowingCards({ post }){
                 </div>
             </div>
             </Link>
-          {pathname !== `/following` ? null : (
             <div className="flex items-center justify-between mt-2 text-[0.85rem] leading-none">
             <div className="flex gap-x-2 items-center">
                 <Avatar className="h-6 w-6">
@@ -54,9 +37,7 @@ export default function FollowingCards({ post }){
               <p className="flex items-center gap-x-1.5"><AiTwotoneEye className="h-4 text-gray-500 w-4" /> 10 </p>
             </div>
           </div>
-          )}
           </div>
-
-          </>
+        </>
     )
 }

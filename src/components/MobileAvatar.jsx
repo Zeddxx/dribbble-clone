@@ -7,11 +7,13 @@ import Link from "next/link";
 import { Separator } from "./ui/separator";
 import { signOut, useSession } from "next-auth/react";
 import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 export default function MobileAvatar() {
 
   const { data: session } = useSession()
   // console.log(session);
+  const pathname = usePathname()
 
   const [isToggle, setIsToggle] = useState(false);
   const divRef = useRef(null)
@@ -34,6 +36,12 @@ export default function MobileAvatar() {
         document.removeEventListener('click', handleClickOutside)
     }
   }, [isToggle])
+
+  useEffect(() => {
+    setIsToggle(false)
+  }, [pathname])
+
+
 
   return (
     <div className="flex lg:hidden">
@@ -66,7 +74,7 @@ export default function MobileAvatar() {
             </Link>
 
             <div className="flex w-full text-sm antialiased flex-col gap-y-5 py-3">
-                <Link href='/following' className="hover:opacity-80">Work preferences</Link>
+                <Link onClick={() => setIsToggle(false)} href='/following' className="hover:opacity-80">Work preferences</Link>
                 <Link href='/account' className="hover:opacity-80">Settings</Link>
 
                 <Separator className='' />

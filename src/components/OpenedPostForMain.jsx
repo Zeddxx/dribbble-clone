@@ -10,8 +10,9 @@ import Link from "next/link";
 import FollowingCards from "./FollowingCards";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import UserPost from "./UserPost";
 
-export default function OpenedPost({ isLoading , posts }){
+export default function OpenedPostForMain({ isLoading , posts }){
     console.log(posts);
     const [userPosts, setUserPosts] = useState([])
     
@@ -121,10 +122,13 @@ export default function OpenedPost({ isLoading , posts }){
                 )}
                 <Button className={cn('rounded-full px-8 w-fit font-normal mt-2')}><Mail className="h-5 w-5 mr-2" /> Work with us</Button>
             </div>
-
-                    <div className="flex gap-8 md:gap-12 flex-wrap mb-8 px-4 sm:px-6 w-full justify-center mt-8">
+                    <div className="flex px-4 items-center max-w-5xl w-full h-auto justify-between mt-6">
+                        <p>More from the user.</p>
+                        <p>See more.</p>
+                    </div>
+                    <div className="flex gap-8 md:gap-12 flex-wrap mb-8 px-4 sm:px-6 w-full justify-center mt-4">
                         {userPosts.map((post) => (
-                            <FollowingCards key={post.id} post={post} />
+                            <UserPost key={post.id} post={post} />
                         ))}
                     </div>
         </>

@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 export default function Profile({ user, session }){
 
     // const { user } = await getAuthSession()
-    console.log(user.image);
+    // console.log(user.image);
     return(
         <div className="flex w-full justify-start md:justify-center mt-4 md:mt-0 h-[16rem] xmd:h-[18rem] px-4 sm:px-6">
                 <div className="w-[30rem] h-full items-start md:items-center justify-start md:justify-center flex md:flex-row flex-col gap-x-8">
