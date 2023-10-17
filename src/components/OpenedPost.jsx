@@ -26,6 +26,8 @@ export default function OpenedPost({ isLoading , posts }){
                 }
         
                 fetchUserPosts()
+
+                document.title = posts.title
             }
         } catch (error) {
             console.log(error);

@@ -50,8 +50,8 @@ export default function FollowingCards({ post }){
                 <p className="bg-gray-600/40 font-semibold px-2 rounded-sm text-gray-100 py-0.5">Pro</p>
             </div>
             <div className="flex items-center gap-x-2">
-              <p className="flex items-center gap-x-1.5"><AiTwotoneHeart className="h-4 text-gray-500 w-4" /> 10 </p>
-              <p className="flex items-center gap-x-1.5"><AiTwotoneEye className="h-4 text-gray-500 w-4" /> 10 </p>
+              <p className="flex items-center gap-x-1.5 text-gray-600 duration-300 cursor-pointer hover:text-red-500"><AiTwotoneHeart className="h-4 w-4" /> 10 </p>
+              <p className="flex items-center gap-x-1.5 text-gray-600 duration-300 cursor-pointer hover:text-red-500"><AiTwotoneEye className="h-4 w-4" /> 10 </p>
             </div>
           </div>
           )}

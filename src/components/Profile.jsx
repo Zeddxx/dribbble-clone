@@ -1,13 +1,17 @@
+'use client'
+
 import { MoreHorizontal } from "lucide-react";
 import { Button } from "./ui/Button";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { cn } from "@/lib/utils";
+import { useEffect } from "react";
 // import { getAuthSession } from "@/lib/authOptions";
 
 export default function Profile({ user, session }){
 
-    // const { user } = await getAuthSession()
-    // console.log(user.image);
+    useEffect(() => {
+      document.title = user?.name + ' | Dribbble'
+    })
     return(
         <div className="flex w-full justify-start md:justify-center mt-4 md:mt-0 h-[16rem] xmd:h-[18rem] px-4 sm:px-6">
                 <div className="w-[30rem] h-full items-start md:items-center justify-start md:justify-center flex md:flex-row flex-col gap-x-8">

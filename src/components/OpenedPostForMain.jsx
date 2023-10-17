@@ -13,10 +13,8 @@ import { useEffect, useState } from "react";
 import UserPost from "./UserPost";
 
 export default function OpenedPostForMain({ isLoading , posts }){
-    console.log(posts);
     const [userPosts, setUserPosts] = useState([])
     
-
     useEffect(() => {
         try {
             if(posts.userId){
@@ -27,13 +25,14 @@ export default function OpenedPostForMain({ isLoading , posts }){
                 }
         
                 fetchUserPosts()
+
+                document.title = posts.title
             }
         } catch (error) {
             console.log(error);
         }
     }, [posts])
 
-    // console.log(userPosts);
     return(
         <>
         <div className="flex w-full h-full flex-col gap-y-4 px-6">
@@ -122,7 +121,7 @@ export default function OpenedPostForMain({ isLoading , posts }){
                 )}
                 <Button className={cn('rounded-full px-8 w-fit font-normal mt-2')}><Mail className="h-5 w-5 mr-2" /> Work with us</Button>
             </div>
-                    <div className="flex px-4 items-center max-w-5xl w-full h-auto justify-between mt-6">
+                    <div className="flex px-4 items-center max-w-5xl mx-auto w-full h-auto justify-between mt-6">
                         <p>More from the user.</p>
                         <p>See more.</p>
                     </div>
